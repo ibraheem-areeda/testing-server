@@ -30,3 +30,12 @@ def charge_webhook(request):
         print(request.data)
         return Response(request.data, status=status.HTTP_201_CREATED)
 
+@api_view(['GET', 'POST'])
+def merchant_status_webhook_test(request):
+    if request.method == 'GET':
+        return Response("this is get method")
+    elif request.method == 'POST':
+        print("object well receved")
+        print(request.data)
+        return Response(request.data, status=status.HTTP_201_CREATED)
+
